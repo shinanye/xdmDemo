@@ -1,0 +1,26 @@
+*{margin: 0;padding: 0;}
+#topbar{
+    background-color: pink;
+    height: 60px;
+    color: white;
+    /* text-align: center; */
+    display: flex;
+    /* 垂直居中 */
+    align-items: center;
+    justify-content: center;
+}
+.topbarPlaceholder{
+    height: 60px;
+}
+.sticky{
+   position: fixed;
+   top: 0;
+   left: 0;
+}
+main{
+    background-color: #eee;
+    height:1500px;
+}
+#topbar.sticky{
+    width: 100%;
+}

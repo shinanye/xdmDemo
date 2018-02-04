@@ -1,3 +1,4 @@
+//函数式模型封装
 // function Tabs(selector){
 //     this.elements = $(selector);
 //     this.init();
@@ -23,6 +24,7 @@
 //     })
 // }
 
+//面向对象封装
 class Tabs{
     constructor(selector){
         this.elements = $(selector);
@@ -42,7 +44,6 @@ class Tabs{
             var index=$li.index();
             var $content =$li.closest(".tabs").find(".tabs-content>li").eq(index);
             $content.addClass('active').siblings().removeClass("active");
-            // console.log(index);
         })
     }
 }
