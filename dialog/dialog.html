@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dialog</title>
     <script src="../common/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/dialog.css">
 </head>
 <body>
-    <button>点击</button>
+    <button id="btn">点击</button>
 </body>
 <script src="js/dialog.js"></script>
 <script>
-    x.onclick = function(){
+    btn.onclick = function(){
         var dialog = new Dialog({
-            title:"标题",
-            content:"<b>welcom</b>",
+            title:"dialog信息窗口",
+            content:"<p>内容区域</p>",
+            className:"user",
             buttons:[{
                 text:"确定",
                 action:function(){

@@ -1,0 +1,35 @@
+.DemoDialog{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.DemoDialog-wrapper{
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    min-width:200px;
+}
+.DemoDialog-header{
+    border-bottom: 1px solid black;
+    margin: 10px auto;
+    padding-bottom: 10px;
+}
+
+.DemoDialog-main{
+    margin: 10px auto;
+    padding-bottom:5px;
+}
+.DemoDialog-footer{
+    text-align: right;
+}
+.DemoDialog-footer button{
+    margin: 10px;
+}
+.user{
+    z-index: 10;
+}
