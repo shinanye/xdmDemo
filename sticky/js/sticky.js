@@ -3,16 +3,8 @@ class Sticky{
         this.elements = $(selector);
         this.offset = n||0;
         this.cacheOffsets();
-        this.listenToScroll();
         this.addPlaceholder();
-    }
-    addPlaceholder(){
-        this.elements.each((index,element)=>{
-            var $wrapper = $("<div class='stickyPlaceholder'></div>");;
-            $(element).wrap($wrapper);
-            $(element).height($(element).outerHeight());
-        })
-
+        this.listenToScroll();
     }
     cacheOffsets(){
         this.offsets=[];
@@ -20,13 +12,21 @@ class Sticky{
             this.offsets[index] = $(element).offset();
         })
     }
+    addPlaceholder(){
+       this.elements.each((index,element)=>{
+            var $wrapper = "<div class='addPlacehold'></div>";
+            $(element).wrap($wrapper);
+            $(element).height($(element).outerHeight());
+       })
+
+    }
     listenToScroll(){
         $(window).on("scroll",()=>{
             var scrollY = window.scrollY;
             this.elements.each((index,element)=>{
                 var $element = $(element);
                 if(scrollY+this.offset>this.offsets[index].top){
-                    $element.addClass('sticky').css({top: this.offset});
+                    $element.addClass("sticky").css({top: this.offset});
                 }else{
                     $element.removeClass("sticky");
                 }
@@ -37,6 +37,7 @@ class Sticky{
 
 // var topbarOffset = $("#topbar").offset();
 // var buttonOffset = $("button").offset();
+
 // $(window).on("scroll",function(){
 //     var scrollY = window.scrollY;
 //     if(scrollY>topbarOffset.top){
@@ -44,7 +45,6 @@ class Sticky{
 //     }else{
 //         $("#topbar").removeClass("sticky");
 //     }
-
 //     if(scrollY+70>buttonOffset.top){
 //         $("button").addClass("sticky");
 //     }else{
